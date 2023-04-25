@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza creator</title>
+<style>
+img {width: 150px; height: 150px; background-color:white;}
+input {width: 142px;}
+h1 {text-align: center;}
+</style>
+</head>
+
+<body style="background-color:DodgerBlue;">
+
+
+<form style = "display: block;" action="file:///C:/Users/TJ%20(Game%20Star)/Documents/Classes/software%20engineering/Final%20Project/Closure.html?fname=&lname=&address=&Username=&Password=">
+  <h3>Type of sauce</h3>
+  <input type="checkbox" id = "redSauce" name="redSauce" value="redSauce" onChange="toggleVisibility('redSauceImg')"/>
+  <label for="redSauce">Red sauce</label><br>
+  
+  <input type="checkbox" id="alfredo" name="alfredo" value="alfredo" onChange="toggleVisibility('alfredoImg')">
+  <label for="alfredo sauce">Alfredo sauce</label>
+  <br><br>
+
+  <h3>Toppings</h3>
+  <input type="checkbox" id = "pepperoni" name="pepperoni" value="pepperoni" onChange="toggleVisibility('pepperoniImg')">
+  <label for="pepperoni">Pepperoni</label><br>
+  
+  <input type="checkbox" id = "sausage" name="sausage" value="sausage" onChange="toggleVisibility('sausageImg')">
+  <label for="sausage">Sausage</label><br>
+  <br><br>
+  <input type="submit" value="Make the pizza">
+</form>
+
+<img id="redSauceImg" src="C:\Users\jadat\Downloads\IMG_7352.png" style="visibility:hidden"/>
+<img id="alfredoImg" src="C:\Users\jadat\Downloads\Alfredo.png" style="visibility:hidden"/>
+<img id="pepperoniImg" src="C:\Users\jadat\Downloads\pepperoni2.png" style="visibility:hidden"/>
+<img id="sausageImg" src="C:\Users\jadat\Downloads\meatballs.png" style="visibility:hidden"/>
+
+<style>
+
+#redSauceImg {
+	position: relative;
+	top: -200px;
+	left: 300px;
+	background-color: transparent;	
+}
+
+#alfredoImg {
+	position: relative;
+	top: -200px;
+	left: 300px;
+	background-color: transparent;
+}
+
+#pepperoniImg {
+	position: relative;
+	top: -200px;
+	left: 300px;
+	background-color: transparent;
+}
+
+#sausageImg {
+	position: relative;
+	top: -200px;
+	left: 300px;
+	background-color: transparent;
+}
+</style>
+
+<script>
+function toggleVisibility(id) {
+   var el = document.getElementById(id);
+
+   if (el.style.visibility=="visible") {
+          el.style.visibility="hidden";
+     }
+     else {
+          el.style.visibility="visible";
+     }
+ }
+</script>
+
+</body>
+</html>

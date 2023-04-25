@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account creator</title>
+<style>
+img {width: 150px; height: 150px; background-color:white;}
+input {width: 142px;}
+h1 {text-align: center;}
+</style>
+</head>
+
+<body style="background-color:DodgerBlue;">
+
+
+<form style = "display: block;" action="http://localhost/Software%20Engineering/Closure.html">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br>
+  
+  <label for="Username">Username:</label><br>
+  <input type="text" id="Username" name="Username"><br>
+  <label for="Password">Password:</label><br>
+  <input type="text" id="Password" name="Password"><br><br>
+  
+  <?php
+	$localhost="localhost:8000";
+	$username="root";
+	$password="12345";
+	$database="pizza";
+	$ssn=$_POST['ssn'];
+	$conn = mysqli_connect($localhost,$username,$password);
+	if (!$conn) {
+	  die("Connection failed: " . mysqli_connect_error());
+	}
+	echo "Connected successfully";
+
+	$query="SELECT * FROM company.employee where ssn=$ssn";
+	$result=mysql::query($query);
+	$num=mysql_num_rows($result);
+	mysql_close();
+
+	if ($num == 1) {
+	 $fname=mysqli_result($result,$i,"fname");
+	 $minit=mysqli_result($result,$i,"minit");
+	 $lname=mysqli_result($result,$i,"lname");
+	 echo "<b>$fname $minit, $lname</b>";
+	}
+  ?>
+  
+
+  <input type="submit" value="Make the account">
+</form>
+
+
+</body>
+</html>
